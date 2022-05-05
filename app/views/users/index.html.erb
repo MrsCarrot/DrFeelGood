@@ -1,0 +1,11 @@
+<h1 class="mb-4"> Doctors</h1>
+
+<% @users.each do |doctor| %>
+    <h2><%= doctor.name %></h2>
+
+    <p>
+        <%= doctor.description %>
+    </p> 
+    <%= link_to "Make an appointment", new_appointment_path(doctor), class:'btn btn-secondary' %>
+    
+<% end %>
