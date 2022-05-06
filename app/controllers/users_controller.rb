@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
     def index
-        @users = User.all
+        #@users = User.all
+        @doctors = Doctor.all
+        
     end
     def new
         @user = User.new
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
     def delete
         @user = User.find_by(id: params[:id])
         @user.delete
+        redirect_to root_path
     end
     def edit
         @user = User.find_by(id: params[:id])
