@@ -17,6 +17,8 @@
          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><%= link_to 'Home', root_path, class: 'nav-link px-2 text-white' %></li>
             <li><%= link_to 'Doctors', users_path, class: 'nav-link px-2 text-white' %></li>
+             <li><%= link_to 'Appointments', appointments_path, class: 'nav-link px-2 text-white' %></li>
+
           </ul>
 
 
@@ -42,6 +44,7 @@
     <main>
       <%= yield %>
     </main>
+
   </body>
 </html>
 

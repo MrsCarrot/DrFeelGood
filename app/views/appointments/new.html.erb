@@ -1,11 +1,11 @@
-<%= form_for :appointment do |f| %>
+<%= form_for @appointment, method: :post do |f| %>
     <div class="mb-3 row">
             <div class="col-sm-2 col-form-label">
             <%= f.label :name %>
             </div>
         
         <div class="col-sm-3">
-            <%= f.text_field :body, required: true, minlenght: 2, class: 'form-control' %>
+            <%= f.text_field :name, required: true, minlenght: 2, class: 'form-control' %>
         </div>
 
     </div>
