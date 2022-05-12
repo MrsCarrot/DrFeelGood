@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
 
   post '/appointment/new', to: 'appointment#create' 
-  
 
   root 'pages#index'
   resources :users, only: [:show, :edit, :delete]
