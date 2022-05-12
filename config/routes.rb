@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   post '/appointment/new', to: 'appointment#create' 
 
-  post '/user_session', to: ' devise/sessions#create'
+  post '/user_session', to: 'sessions#create'
 
   root 'pages#index'
   resources :users, only: [:show, :edit, :delete]
