@@ -1,0 +1,13 @@
+   <% if @doctor %>
+   
+   <h2><%= @doctor.name %></h2>
+
+    <p>
+        <%= @doctor.description %>
+    </p> 
+    <% else %>
+        no user found
+    <% end %>
+
+    <%= button_to 'Edit Doctor', edit_doctor_path(@doctor) %>
+    <%= button_to 'Delete Doctor', doctor_path(@doctor), method: :delete %>

@@ -1,8 +1,12 @@
-<% @user.each do |user| %>
-
+   <% if @user %>
+   
    <h2><%= @user.name %></h2>
 
     <p>
         <%= @user.description %>
     </p> 
-<% end %>
+    <% else %>
+        no user found
+    <% end %>
+
+    
