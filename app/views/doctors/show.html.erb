@@ -9,5 +9,5 @@
         no user found
     <% end %>
 
-    <%= button_to 'Edit Doctor', edit_doctor_path(@doctor) %>
-    <%= button_to 'Delete Doctor', doctor_path(@doctor), method: :delete %>
+    <%= button_to 'Edit Doctor', edit_doctor_path(@doctor), class:'btn btn-secondary' %>
+    <%= button_to 'Delete Doctor', doctor_path(@doctor), method: :delete, class:'btn btn-secondary' %>

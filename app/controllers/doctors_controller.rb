@@ -22,9 +22,9 @@ class DoctorsController < ApplicationController
         redirect_to doctors_path
     end
     def update
-        @doctor.update(permitted_params)
+        @doctor.update!(permitted_params)
         
-        if @doctor.update(permitted_params)
+        if @doctor.update!(permitted_params)
           redirect_to(@doctor)
         else
           render "edit"

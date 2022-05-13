@@ -16,11 +16,11 @@ class UsersController < ApplicationController
     end
     
     def create
-        @user = User.create(params)
+        @user = User.create!(params)
     end
     def update
         @user = User.find_by(id: params[:id])
-        @user.update(params)
+        @user.update!(params)
     end
     def delete
         @user = User.find_by(id: params[:id])

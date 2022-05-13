@@ -20,7 +20,7 @@ before_action :authenticate_user!#, except: [:index, :show]
         #binding.pry
         @appointment = Appointment.new(appointment_params.merge({user_id: current_user.id}))
         @appointment.save!
-        #redirect_to new_appointment_path
+        
         redirect_to appointments_path
     end
     private
@@ -31,7 +31,7 @@ before_action :authenticate_user!#, except: [:index, :show]
 
     def update
         @appointment = Appointment.find_by(id: params[:id])
-        @appointment.update(params)
+        @appointment.update!(params)
     end
     def delete
         @appointment = Appointment.find_by(id: params[:id])
