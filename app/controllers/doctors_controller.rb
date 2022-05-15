@@ -1,10 +1,11 @@
 class DoctorsController < ApplicationController
+
+    load_and_authorize_resource
     before_action :find_doctor, except: [:index, :new, :create]
-    
     before_action :authenticate_user!, except: [:index, :show]
+
     
     def index
-      
         @doctors = Doctor.all
         
     end
@@ -13,7 +14,6 @@ class DoctorsController < ApplicationController
     end
 
     def show
-        
     end
     
     def create
@@ -21,7 +21,9 @@ class DoctorsController < ApplicationController
         @doctor = Doctor.create!(permitted_params)
         redirect_to doctors_path
     end
+
     def update
+        #authenticate_user! :update, @doctor
         @doctor.update!(permitted_params)
         
         if @doctor.update!(permitted_params)
@@ -30,12 +32,14 @@ class DoctorsController < ApplicationController
           render "edit"
         end
     end
+
     def destroy
         @doctor.delete
         redirect_to root_path
     end
+    
     def edit
-        
+        #authenticate_user! :update, @doctor
     end
 
     private 
